@@ -2,9 +2,13 @@
 
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2021/22
 
-## Število ljudi z duševnimi motnjami v Evropi
+## Število ljudi z depresijo in ostalimi duševnimi motnjami v Evropi
 
+Odkar smo v času korona krize je vse več govora o porastu depresije, anksioznosti ter ostalih duševnih motenj. Sedaj prav zagotovo to ni več takšna tabu tema kot je bila morda včasih. Pa tudi že pred korono se je precej govorilo o tem, predvsem v povezavi z razvitostjo držav in s tem povezanim pritiskom na posameznika glede njegove kariere ter v povezavi z družbenimi omrežji in primerjanjem z vrstniki. 
 
+V tej analizi bi rada preverila razširjenost duševnih motenj(depresija, anksiozna motnja, bipolarna motnja, motnje prehranjevanja, shizofrenija, ADHD, obsesivno-kompulzivna motnja...) v evropskih državah, pri čemer bi rada še posebej primerjala razširjenost depresije. Primerjala bom razširjenost le-teh glede na starostno mediano, izobrazbeno sestavo, številom poročenih oseb, BDP-jem na osebo ter stopnjo urbanizacije države.
+
+Delež ljudi z duševnimi motnjami bom primerjala tudi z številom zaposlenih v psihiatriji in deležem sredstev državnega proračuna, ki so namenjena pomoči ljudem z duševnimi težavami ter prikazala, kako se je delež ljudi z depresijo spreminjal skozi čas glede na rast BDP na prebivalca.
 
 ### Viri
 
@@ -18,13 +22,13 @@ Urejeni podatki se nahajajo v štirih razpredelnicah.
 Vse meritve si bom ogledala za vsako evropsko državo posebej, 
 
 1. tabela
-* država, št. prebivalcev, mediana starosti prebivalcev, stopnja izobražensti, št.ljudi v partnerskih zvezah, število ljudi z duševnimi motnjami
+* država, št. prebivalcev, mediana starosti prebivalcev, stopnja izobraženosti, št.ljudi v partnerskih zvezah, število ljudi z duševnimi motnjami, delež ljudi z depresijo
 2. tabela
-* država, deleč ljudi z duševnimi motnjami, BDP per capita, stopnja urbanizacije
+* država, delež ljudi z duševnimi motnjami, delež ljudi z depresijo, BDP per capita, stopnja urbanizacije
 3. tabela 
-* država, delež ljudi z duževnimi motnjami, št zaposlenih v psihiatriji, sredstva namenjena zdravljenju duševnih bolezni
+* država, delež ljudi z duševnimi motnjami, št zaposlenih v psihiatriji, sredstva namenjena zdravljenju duševnih bolezni
 4. tabela 
-* država, leto, BDP per capita, splošno zadovoljstvo z življenjem, delež ljudi z duševno motnjo
+* država, leto, BDP per capita, delež ljudi z depresijo
 
 ## Program
 
@@ -40,49 +44,3 @@ Potrebne knjižnice so v datoteki `lib/libraries.r`
 Podatkovni viri so v mapi `podatki/`.
 Zemljevidi v obliki SHP, ki jih program pobere,
 se shranijo v mapo `../zemljevidi/` (torej izven mape projekta).
-
-## Potrebni paketi za R
-
-Za zagon tega vzorca je potrebno namestiti sledeče pakete za R:
-
-* `knitr` - za izdelovanje poročila
-* `rmarkdown` - za prevajanje poročila v obliki RMarkdown
-* `shiny` - za prikaz spletnega vmesnika
-* `DT` - za prikaz interaktivne tabele
-* `rgdal` - za uvoz zemljevidov
-* `rgeos` - za podporo zemljevidom
-* `digest` - za zgoščevalne funkcije (uporabljajo se za shranjevanje zemljevidov)
-* `readr` - za branje podatkov
-* `rvest` - za pobiranje spletnih strani
-* `tidyr` - za preoblikovanje podatkov v obliko *tidy data*
-* `dplyr` - za delo s podatki
-* `gsubfn` - za delo z nizi (čiščenje podatkov)
-* `ggplot2` - za izrisovanje grafov
-* `mosaic` - za pretvorbo zemljevidov v obliko za risanje z `ggplot2`
-* `maptools` - za delo z zemljevidi
-* `tmap` - za izrisovanje zemljevidov
-* `extrafont` - za pravilen prikaz šumnikov (neobvezno)
-
-## Binder
-
-Zgornje [povezave](#analiza-podatkov-s-programom-r-202021)
-omogočajo poganjanje projekta na spletu z orodjem [Binder](https://mybinder.org/).
-V ta namen je bila pripravljena slika za [Docker](https://www.docker.com/),
-ki vsebuje večino paketov, ki jih boste potrebovali za svoj projekt.
-
-Če se izkaže, da katerega od paketov, ki ji potrebujete, ni v sliki,
-lahko za sprotno namestitev poskrbite tako,
-da jih v datoteki [`install.R`](install.R) namestite z ukazom `install.packages`.
-Te datoteke (ali ukaza `install.packages`) **ne vključujte** v svoj program -
-gre samo za navodilo za Binder, katere pakete naj namesti pred poganjanjem vašega projekta.
-
-Tako nameščanje paketov se bo izvedlo pred vsakim poganjanjem v Binderju.
-Če se izkaže, da je to preveč zamudno,
-lahko pripravite [lastno sliko](https://github.com/jaanos/APPR-docker) z želenimi paketi.
-
-Če želite v Binderju delati z git,
-v datoteki `gitconfig` nastavite svoje ime in priimek ter e-poštni naslov
-(odkomentirajte vzorec in zamenjajte s svojimi podatki) -
-ob naslednjem zagonu bo mogoče delati commite.
-Te podatke lahko nastavite tudi z `git config --global` v konzoli
-(vendar bodo veljale le v trenutni seji).
